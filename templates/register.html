@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Бүртгэл{% endblock %}
+
+{% block content %}
+<section class="card form-card">
+  <div class="section-heading">
+    <p class="eyebrow">Professional registration</p>
+    <h1>Бүртгэл</h1>
+  </div>
+
+  <div class="info-box">
+    <strong>Имэйл формат:</strong>
+    <span>name@example.com</span>
+    <span>first.last@company.com</span>
+  </div>
+
+  <form method="POST" class="registration-form">
+    <div class="input-row">
+      <label>
+        <span>Овог</span>
+        <input type="text" name="first_name" placeholder="Овог" required />
+      </label>
+      <label>
+        <span>Нэр</span>
+        <input type="text" name="last_name" placeholder="Нэр" required />
+      </label>
+    </div>
+
+    <div class="input-row single">
+      <label>
+        <span>Утасны дугаар</span>
+        <input type="text" name="phone" placeholder="+976 99112233" required />
+      </label>
+    </div>
+
+    <div class="input-row single">
+      <label>
+        <span>Имэйл</span>
+        <input type="email" name="email" placeholder="name@example.com" required />
+      </label>
+    </div>
+
+    <button type="submit" class="primary-button">Бүртгүүлэх</button>
+  </form>
+</section>
+{% endblock %}

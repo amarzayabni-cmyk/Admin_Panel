@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin login{% endblock %}
+
+{% block content %}
+<section class="card form-card narrow-card">
+  <div class="section-heading">
+    <p class="eyebrow">Restricted access</p>
+    <h1>Admin login</h1>
+  </div>
+
+  <form method="POST" class="registration-form">
+    <div class="input-row single">
+      <label>
+        <span>Нууц үг</span>
+        <input type="password" name="password" placeholder="Админ нууц үг" required />
+      </label>
+    </div>
+
+    <button type="submit" class="primary-button">Нэвтрэх</button>
+  </form>
+</section>
+{% endblock %}

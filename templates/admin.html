@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin dashboard{% endblock %}
+
+{% block content %}
+<section class="card admin-card">
+  <div class="admin-toolbar">
+    <div>
+      <p class="eyebrow">Management panel</p>
+      <h1>Бүртгэгдсэн хэрэглэгчид</h1>
+    </div>
+    <div class="admin-actions">
+      <a href="{{ url_for('export_excel') }}" class="secondary-button">Excel татах</a>
+      <a href="{{ url_for('logout') }}" class="ghost-button">Гарах</a>
+    </div>
+  </div>
+
+  {% if registrations %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Овог</th>
+            <th>Нэр</th>
+            <th>Утас</th>
+            <th>Имэйл</th>
+            <th>Бүртгэгдсэн</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in registrations %}
+            <tr>
+              <td>{{ item["id"] }}</td>
+              <td>{{ item["first_name"] }}</td>
+              <td>{{ item["last_name"] }}</td>
+              <td>{{ item["phone"] }}</td>
+              <td>{{ item["email"] }}</td>
+              <td>{{ item["created_at"] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <p>Бүртгэгдсэн хэрэглэгч байхгүй байна.</p>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}
